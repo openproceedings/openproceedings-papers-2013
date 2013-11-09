@@ -1,38 +1,19 @@
+============================================
+DMTCP: Bringing Checkpoint-Restart to Python
+============================================
+
+:date: 2013-01-02
 :author: Kapil Arya
 :email: kapil@ccs.neu.edu
 :institution: Northeastern University
-
+:tags: checkpoint-restart, DMTCP, IPython, Cython, reversible debugger
 :author: Gene Cooperman
 :email: gene@ccs.neu.edu
 :institution: Northeastern University
 
 :video: http://www.youtube.com/watch?v=1l_wGZz0JEE
 
-============================================
-DMTCP: Bringing Checkpoint-Restart to Python
-============================================
-
-.. class:: abstract
-
-DMTCP (Distributed MultiThreaded CheckPointing) is a mature
-checkpoint-restart package.  It operates in user-space without kernel
-privilege, and adapts to application-specific requirements through plugins.
-While DMTCP has been able to checkpoint Python and IPython "from  the
-outside" for many years, a Python module has recently been created to
-support DMTCP.  IPython support is included through a new DMTCP plugin.
-A checkpoint can be requested interactively within a
-Python session, or under the control of a specific Python program.
-Further, the Python program can execute specific Python code prior
-to checkpoint, upon resuming (within the original process), and upon
-restarting (from a checkpoint image).  Applications of DMTCP are demonstrated
-for: (i) Python-based graphics using VNC; (ii) a Fast/Slow technique
-to use multiple hosts or cores to check one Cython computation in parallel;
-and (iii) a reversible debugger, FReD, with a novel reverse-expression
-watchpoint feature for locating the cause of a bug.
-
-.. class:: keywords
-
-   checkpoint-restart, DMTCP, IPython, Cython, reversible debugger
+:summary: DMTCP (Distributed MultiThreaded CheckPointing) is a mature checkpoint-restart package.  It operates in user-space without kernel privilege, and adapts to application-specific requirements through plugins.  While DMTCP has been able to checkpoint Python and IPython "from  the outside" for many years, a Python module has recently been created to support DMTCP.  IPython support is included through a new DMTCP plugin.  A checkpoint can be requested interactively within a Python session, or under the control of a specific Python program.  Further, the Python program can execute specific Python code prior to checkpoint, upon resuming (within the original process), and upon restarting (from a checkpoint image).  Applications of DMTCP are demonstrated for: (i) Python-based graphics using VNC; (ii) a Fast/Slow technique to use multiple hosts or cores to check one Cython computation in parallel; and (iii) a reversible debugger, FReD, with a novel reverse-expression watchpoint feature for locating the cause of a bug.
 
 Introduction
 ============
@@ -41,7 +22,7 @@ DMTCP (Distributed MultiThreaded CheckPointing) [Ansel09]_ is a mature
 user-space checkpoint-restart package.  One can
 view checkpoint-restart as a generalization of pickling.  Instead of
 saving an object to a file, one saves the entire Python session to a
-file.  Checkpointing graphics in Python is also supported |---| by
+file.  Checkpointing graphics in Python is also supported by
 checkpointing a virtual network client (VNC) session with Python running
 inside that session.
 
@@ -72,7 +53,7 @@ which additionally supports graphics and the distributed processes of
 IPython.  In addition, three novel uses of DMTCP for helping
 debug Python are discussed.
 
-1.  Fast/Slow Computation |---| Cython provides both traditional
+1.  Fast/Slow Computation : Cython provides both traditional
     interpreted functions and compiled C functions.  Interpreted
     functions are slow, but correct.  Compiled functions are fast,
     but users sometimes declare incorrect C types, causing the
@@ -82,10 +63,10 @@ debug Python are discussed.
     intervals.  Separate computer nodes are used to check each interval
     in interpreted mode between checkpoints.
 
-2.  FReD |---| a Fast Reversible Debugger that works closely with
+2.  FReD : a Fast Reversible Debugger that works closely with
     the Python pdb debugger, as well as other Python debuggers.
 
-3.  Reverse Expression Watchpoint |---| This is a novel feature
+3.  Reverse Expression Watchpoint : This is a novel feature
     within the FReD reversible debugger.  Assume a bug occurred in the past.
     It is associated with the point in time when a certain 
     expression changed.  Bring the user back to a pdb session
@@ -326,13 +307,13 @@ until the end of the computation interval.  The results at the end of
 that interval can then be compared to the results at the end of the same
 interval in compiled mode.
 
-Figure :ref:`fast-slow` illustrates the above idea.
+Figure 1 illustrates the above idea.
 A similar idea has been used by [Ghoshal11]_ for distributed speculative
 parallelization.
 
-.. figure:: fast-slow.png
+.. figure:: images/dmtcp_fast-slow.png
 
-   Fast Cython with Slow CPython "checking" nodes. :label:`fast-slow`
+   Figure 1: Fast Cython with Slow CPython "checking" nodes. 
 
 Note that in order to compare the results at the end of a
 computation interval, it is important that the interpreted version
@@ -393,16 +374,16 @@ command which takes it to the previous step. He or she  can then issue
 a :code:`step` command to step into the function in order to find the
 problem.
 
-.. figure:: fred-arch-python.png
+.. figure:: images/dmtcp_fred-arch-python.png
 
-   Fast Reversible Debugger. :label:`fred-arch`
+   Figure 2: Fast Reversible Debugger.
 
 FReD (Fast Reversible Debugger) [Arya12]_, [FReD13]_ is a reversible debugger
 based on
 checkpoint-restart. FReD is implemented as a set of Python scripts and
 uses DMTCP to create checkpoints during the
 debugging session. FReD also keeps track of the debugging history. Figure
-:ref:`fred-arch` shows the architecture of FReD.
+2 shows the architecture of FReD.
 
 A Simple UNDO Command
 ---------------------
@@ -427,11 +408,11 @@ intervals to reduce the time spent in replaying the debugging history.
 More complex reverse commands
 -----------------------------
 
-.. figure:: commands.png
+.. figure:: images/dmtcp_commands.png
 
-   Reverse Commands. :label:`reverse-xxx`
+   Figure 3: Reverse Commands. 
 
-Figure :ref:`reverse-xxx` shows some typical
+Figure 3 shows some typical
 debugging commands being executed in forward as well as backward
 direction in time.
 
@@ -486,11 +467,11 @@ execution.  It brings the user directly to a statement (one that is not
 a function call) at which the expression is correct, but executing the
 statement will cause the expression to become incorrect.
 
-.. figure:: rw-new.png
+.. figure:: images/dmtcp_rw-new.png
 
-   Reverse Expression Watchpoint. :label:`reverse-watch`
+   Figure 4: Reverse Expression Watchpoint. 
 
-Figure :ref:`reverse-watch` provides a simple example.  Assume that a
+Figure 4 provides a simple example.  Assume that a
 bug occurs whenever a linked list has length longer than one million.
 So an expression :code:`linked_list.len() <= 1000000` is assumed to be
 true throughout.  Assume that it is too expensive to frequently compute
@@ -508,15 +489,15 @@ transition or bug over the process lifetime.  Our goal is simply to find
 any one occurrence of the bug.
 
 The core of a reverse expression watchpoint is a binary search.  In
-Figure :ref:`reverse-watch`, assume a checkpoint was taken near the
+Figure 4, assume a checkpoint was taken near the
 beginning of the time interval.  So, we can revert to any point in the
 illustrated time interval by restarting from the checkpoint image and
 re-executing the history of debugging commands until the desired point
 in time.
 
 Since the expression is "good" at the beginning of Figure
-:ref:`reverse-watch` and it is "bad" at the end of that figure, there
-must exist a buggy statement |---| a statement exhibiting the transition
+4 and it is "bad" at the end of that figure, there
+must exist a buggy statement : a statement exhibiting the transition
 from "good" to "bad".  A standard binary search algorithm converges to a
 case in which the current statement is "good" and the next statement
 transitions from "good" to "bad".  By the earlier definition of a "bug",
@@ -618,9 +599,9 @@ References
 Appendix: Background of DMTCP
 =============================
 
-.. figure:: dmtcp-arch.png
+.. figure:: images/dmtcp_dmtcp-arch.png
 
-   Architecture of DMTCP. :label:`dmtcp-arch`
+   Figure 5: Architecture of DMTCP.
 
 DMTCP [Ansel09]_ is a
 transparent checkpoint-restart package with its roots going back eight
@@ -641,7 +622,7 @@ following commands:
 DMTCP automatically tracks all local and remote child processes and
 their relationships.
 
-As seen in Figure :ref:`dmtcp-arch`, a computation running under DMTCP
+As seen in Figure 6, a computation running under DMTCP
 consists of a centralized coordinator process and several user
 processes. The user processes may be local or distributed.  User
 processes may communicate with each other using sockets, shared-memory,
@@ -651,9 +632,9 @@ thread which communicates with the coordinator.
 DMTCP Plugins
 -------------
 
-.. figure:: plugin-architecture-simple.png
+.. figure:: images/dmtcp_plugin-architecture-simple.png
 
-   DMTCP Plugins. :label:`dmtcp-plugins`
+   Figure 6: DMTCP Plugins.
 
 DMTCP plugins are used to keep DMTCP modular. There is a separate plugin
 for each operating system resource. Examples of plugins are pid plugin,
@@ -664,7 +645,7 @@ The execution environment can change between checkpoint and restart. For
 example, the computation might be restarted on a different computer
 which has different file mount points, a different network address, etc.
 Plugins handle such changes in the execution environment by virtualizing
-these aspects. Figure :ref:`dmtcp-plugins` shows the layout of DMTCP
+these aspects. Figure 6 shows the layout of DMTCP
 plugins within the application.
 
 DMTCP Coordinator
