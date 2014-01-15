@@ -3,17 +3,16 @@ DMTCP: Bringing Checkpoint-Restart to Python
 ============================================
 
 :date: 2013-01-02
-:author: Kapil Arya
+:author: Kapil Arya, Gene Cooperman
 :email: kapil@ccs.neu.edu
 :institution: Northeastern University
 :tags: checkpoint-restart, DMTCP, IPython, Cython, reversible debugger
-:author: Gene Cooperman
-:email: gene@ccs.neu.edu
-:institution: Northeastern University
+:author_figshare_ids: 97686, 1
 
 :video: http://www.youtube.com/watch?v=1l_wGZz0JEE
 
 :summary: DMTCP (Distributed MultiThreaded CheckPointing) is a mature checkpoint-restart package.  It operates in user-space without kernel privilege, and adapts to application-specific requirements through plugins.  While DMTCP has been able to checkpoint Python and IPython "from  the outside" for many years, a Python module has recently been created to support DMTCP.  IPython support is included through a new DMTCP plugin.  A checkpoint can be requested interactively within a Python session, or under the control of a specific Python program.  Further, the Python program can execute specific Python code prior to checkpoint, upon resuming (within the original process), and upon restarting (from a checkpoint image).  Applications of DMTCP are demonstrated for: (i) Python-based graphics using VNC; (ii) a Fast/Slow technique to use multiple hosts or cores to check one Cython computation in parallel; and (iii) a reversible debugger, FReD, with a novel reverse-expression watchpoint feature for locating the cause of a bug.
+
 
 Introduction
 ============
@@ -475,8 +474,8 @@ Figure 4 provides a simple example.  Assume that a
 bug occurs whenever a linked list has length longer than one million.
 So an expression :code:`linked_list.len() <= 1000000` is assumed to be
 true throughout.  Assume that it is too expensive to frequently compute
-the length of the linked list, since this would require :math:`O(n^2)`
-time in what would otherwise be a :math:`O(n)` time algorithm.  (A more
+the length of the linked list, since this would require :code:`O(n^2)`
+time in what would otherwise be a :code:`O(n)` time algorithm.  (A more
 sophisticated example might consider a bug in an otherwise
 duplicate-free linked list or an otherwise cycle-free graph.  But the
 current example is chosen for ease of illustrating the ideas.)
@@ -504,7 +503,7 @@ transitions from "good" to "bad".  By the earlier definition of a "bug",
 FReD has found a statement with a bug.  This represents success.
 
 If implemented naively, this binary search requires that some statements
-may need to be re-executed up to :math:`\log_2 N` times.  However, FReD
+may need to be re-executed up to :code:`\log_2 N` times.  However, FReD
 can also create intermediate checkpoints.  In the worst case, one can
 form a checkpoint at each phase of the binary search.  In that case, no
 particular sub-interval over the time period needs to be executed more
@@ -708,4 +707,3 @@ restored. Next, the user threads are recreated. The plugins then receive
 the restart notification and restore their underlying resources,
 translation tables, etc.  Finally, the checkpoint thread "un-quiesces" the
 user threads and the user threads resume executing application code.
-
