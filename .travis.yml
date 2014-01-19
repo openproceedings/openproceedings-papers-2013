@@ -7,7 +7,7 @@ python:
 install:
 - pip install -r ../buildbot/requirements.txt --use-mirrors
 script:
-- ../buildbot/build.sh 
+- ../buildbot/build.sh openproceedings-papers-2013
 notifications:
   email:
     on_success: always
