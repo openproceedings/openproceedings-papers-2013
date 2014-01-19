@@ -16,6 +16,7 @@ env:
   global:
   - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
 before_install:
+  - sudo apt-get install python-imaging
   - git clone --recursive https://github.com/openproceedings/openproceedings-buildbot.git ../buildbot
   - ln -s ../buildbot/content .
 after_success: ../buildbot/deploy.sh 2013
