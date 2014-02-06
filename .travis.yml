@@ -4,11 +4,8 @@ branches:
 language: python
 python:
 - 2.7
-install:
-- sudo apt-get install python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
-- pip install -r ../buildbot/requirements.txt --use-mirrors
 script:
-- ../buildbot/build.sh openproceedings-papers-2013
+    - ../buildbot/build.sh openproceedings-papers-2013
 notifications:
   email:
     on_success: always
@@ -17,6 +14,6 @@ env:
   global:
   - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
 before_install:
-  - sudo apt-get install python-imaging
   - git clone --recursive https://github.com/openproceedings/openproceedings-buildbot.git ../buildbot
+  - source ../buildbot/prepare.sh
 after_success: ../buildbot/deploy.sh 2013
