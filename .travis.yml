@@ -13,6 +13,7 @@ notifications:
 env:
   global:
   - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
+  - secure: jJcvu2PRCPEUe9GBoYvndM1xYi2fTP/mqcF0s/5c+4C/tRre5bxza/BmvgzjNsbn4/u5JTQWuSAN+/2yo9ACo6f8ZPoxnAwGxl0wcdsnOF1SZfyZKqUzbG6E9V8have4iQnR3u0lZxWrhSl1q+UMezXDDmRsb2p/vgveiJUDKnk=
 before_install:
   - git clone --recursive https://github.com/openproceedings/openproceedings-buildbot.git ../buildbot
   - source ../buildbot/prepare.sh
