@@ -5,7 +5,7 @@ language: python
 python:
 - 2.7
 script:
-    - ../buildbot/build.sh openproceedings-papers-2013
+    - ../buildbot/build.sh openproceedings/openproceedings-papers-2013
 notifications:
   email:
     on_success: always
