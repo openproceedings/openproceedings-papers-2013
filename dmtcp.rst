@@ -407,7 +407,7 @@ intervals to reduce the time spent in replaying the debugging history.
 More complex reverse commands
 -----------------------------
 
-.. figure:: images/dmtcp_commands.png
+.. figure:: images/dmtcp_commands.jpg
 
    Figure 3: Reverse Commands. 
 
