@@ -14,6 +14,8 @@ env:
   global:
   - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
   - secure: jJcvu2PRCPEUe9GBoYvndM1xYi2fTP/mqcF0s/5c+4C/tRre5bxza/BmvgzjNsbn4/u5JTQWuSAN+/2yo9ACo6f8ZPoxnAwGxl0wcdsnOF1SZfyZKqUzbG6E9V8have4iQnR3u0lZxWrhSl1q+UMezXDDmRsb2p/vgveiJUDKnk=
+  - secure: R7qIoGfaWqyM7FcKgFlAYrzOQFYEE2hGb8OhmQmfy753QxojuXXobuxBrQpfsg9T1zKSG8Sl3kjbV9xqQQ3cUYjUNk3vx9JEckP9S3qMtZ3stW6Bkoc30s4SpvtMHo3oo15dDInMB2++EqUJDhAFjo3/S8Zk1DzN8LBoqUFrmQ8=
+  - secure: L2cetGVACByyCaG3y1nL1IvHxeBdUa/yR673en5M4v75oRAhaiUAnP7pr4CIb5SBscV9vbhE/GSHqVQ6H9bRLP3nca6qZbD5sWs+fMznY7YC7k/B8KRALnvcx5meskorJ349LAvK2cn9K5aXIq4MRJmAYV2rsUq8DfsDUJDsF9Y=
 before_install:
   - git clone --recursive https://github.com/openproceedings/openproceedings-buildbot.git ../buildbot
   - source ../buildbot/prepare.sh
