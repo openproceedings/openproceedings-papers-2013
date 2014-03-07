@@ -10,13 +10,36 @@ notifications:
   email:
     on_success: always
     on_failure: always
-env:
-  global:
-  - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
-  - secure: jJcvu2PRCPEUe9GBoYvndM1xYi2fTP/mqcF0s/5c+4C/tRre5bxza/BmvgzjNsbn4/u5JTQWuSAN+/2yo9ACo6f8ZPoxnAwGxl0wcdsnOF1SZfyZKqUzbG6E9V8have4iQnR3u0lZxWrhSl1q+UMezXDDmRsb2p/vgveiJUDKnk=
-  - secure: R7qIoGfaWqyM7FcKgFlAYrzOQFYEE2hGb8OhmQmfy753QxojuXXobuxBrQpfsg9T1zKSG8Sl3kjbV9xqQQ3cUYjUNk3vx9JEckP9S3qMtZ3stW6Bkoc30s4SpvtMHo3oo15dDInMB2++EqUJDhAFjo3/S8Zk1DzN8LBoqUFrmQ8=
-  - secure: L2cetGVACByyCaG3y1nL1IvHxeBdUa/yR673en5M4v75oRAhaiUAnP7pr4CIb5SBscV9vbhE/GSHqVQ6H9bRLP3nca6qZbD5sWs+fMznY7YC7k/B8KRALnvcx5meskorJ349LAvK2cn9K5aXIq4MRJmAYV2rsUq8DfsDUJDsF9Y=
 before_install:
   - git clone --recursive https://github.com/openproceedings/openproceedings-buildbot.git ../buildbot
   - source ../buildbot/prepare.sh
 after_success: ../buildbot/deploy.sh 2013
+env:
+  global:
+    - secure: iVEhGr047kZGjy0v46hWwgjNYkWoDlOjlelMG/I46Jc4s/M+12keYK2nW2xb1tOvL80Nptju+PCiQYvCbWjGqcZy3Yo2cKJq1Gf5gmWvrTb2zMqthfH3JoJhIMD4v143abvuyrfFlBxljuHAY8WvDigaXS7nerKad6D58ZbiLf0=
+    - secure: jJcvu2PRCPEUe9GBoYvndM1xYi2fTP/mqcF0s/5c+4C/tRre5bxza/BmvgzjNsbn4/u5JTQWuSAN+/2yo9ACo6f8ZPoxnAwGxl0wcdsnOF1SZfyZKqUzbG6E9V8have4iQnR3u0lZxWrhSl1q+UMezXDDmRsb2p/vgveiJUDKnk=
+    - secure: R7qIoGfaWqyM7FcKgFlAYrzOQFYEE2hGb8OhmQmfy753QxojuXXobuxBrQpfsg9T1zKSG8Sl3kjbV9xqQQ3cUYjUNk3vx9JEckP9S3qMtZ3stW6Bkoc30s4SpvtMHo3oo15dDInMB2++EqUJDhAFjo3/S8Zk1DzN8LBoqUFrmQ8=
+    - secure: L2cetGVACByyCaG3y1nL1IvHxeBdUa/yR673en5M4v75oRAhaiUAnP7pr4CIb5SBscV9vbhE/GSHqVQ6H9bRLP3nca6qZbD5sWs+fMznY7YC7k/B8KRALnvcx5meskorJ349LAvK2cn9K5aXIq4MRJmAYV2rsUq8DfsDUJDsF9Y=
+    - secure: "LNXDpvPYRIObLhswHMBjv20jabdSfQDhS46FpkenF8GGFIXJK0sMziC73nMMPp9yRz5+HkeVESHSgVrBGH8Cnso4uqyXuUruYja/63Uua3/Nn8zaqEeLkNRbJDzWziX/LZeA27pthJmHcOWJYrvxd3ZcOYmK+2NFu085hqjczWE="
+    - secure: "FMPETVICY08UsLei/LZ1JOIIPuFq+xYI7vCOjap5SwpgcwFv4oWHD3gAJD/y+gyZzxHL7n/ixztEPWcnGswB9afbJ3vMet36a/z6AzJ+CYQY7SZ4sOeuoWD4VsUehZJfJ67BCWYHkjdqm5c91G2fnq+NC4+4aI8m6YCpdGINDrY="
+    - secure: "RmJfdSowzkqPVmB1mMRa6BzGQoUo7p2iTcnNIE9AcDyL2khUSy8fod1c3x/GzcwmAiGpUwvdB5y+FkCWFMdwWa/2hXgT2DXeHB0H0wFA00xC0WYED2QyX6pzdxoyT8sexVdxrH7RpR9BRMS3w0y+AkpCIHlX6RXQdSBwD3DJvRM="
+    - secure: "Wn+58/LWT5La5/s4vhVltFdKIjmBIp+Bk3N8pDT4WFGzsjCwpKC/QhdKNVPreidOEu5hUrkNZQ3UdQgCLxMxu4aMWAjH0Y0fjvULcAe0Csh6rDrOOePazqjDlrE2AvkO5BBGXQ705Wm71hhptuZZ3s91G6LJFvetFtJ0CnaUf80="
+    - secure: "Zjazf/JasqstuEomYmZu5y6V0QgEyD1y5o2aZuEgavMoteblCh7PxtRPIqMyT/p87XYnXg/GYp8JUUfIZBzL1i4H/PcIqBWQ8liJadqbW+dVsGr5WOlURbyjw+XE/GBLkytHTbv+DDPH2hIKR9xhpXFPP0gAZlwDuvbPF1x5tAA="
+    - secure: "RCSfgOeDFVNwPt+qCoj+sAWwOLfpyHlciksC8FgKWreMjyN4S6mRObJSkWLxsjRVDat+Q5ytO35KrrrgC27QSZPzB6hji8Zxlj3h+WzP/qccLeYJ/C6cWH8ZDU0kkGkjK56a1HUVp67XoO/MgBwoOL82Bz7uUcyHCWstHQwIPPs="
+    - secure: "Tn8TGnDwNgh+nPO772eoMIhJW2IoCwhjRx3K6w+CWmZybEiZpvIrKyIEejRHiwDFUsuqcuTxdkJzgcT+kCbN2YyhOnGgsp+UDQJF4ZCTG/9CntDfLabuS/PVrphscpT0tcmIAZ3JQ16S1oaWzjzr5UEXIbadsEXuksGX1GN5S20="
+    - secure: "gP/ff56ktjtVZHJJnbdp08cJX8KggtWBbF062f96nNOFi+fu4VOiqyJjKQ6SXlRtfvgIMpAnuVPKqrm7ZP51jpwytTvE9WiuRiKcsqRb6pkQ53cPj97Ljt87rzdEAKNlHmsrTts2U4j449Iq9D7p12cuwvo6SKaFIwUxbamD4FU="
+    - secure: "U5Z7ojqtj/AtuFxslTwXOk5fhKeccKbEIDZuQKZsK32WRWn/etrT3MsUCxMpCpk3nLNBvzYXV9gcv+SbxK8OznL6CF2SO5YdZ9o6JFMdc6zySe2mqGmNX0mF7SI9CAqL86xr8GoAMY5w3aUo5D693+HaJZI8EAf/zqCxiUqxglc="
+    - secure: "bNd6A/Z7DPDurP5JD1alx0pBiIFX+Dq4QsYDBSEZtDoQ/zakY4QpvLhGACqN3IwbIua/HGQEbWQOUSLyp7ocnSe1XJljbadVJSAQ/NVbnfR6DbUY0PMkPS0sHMKJ0u1jpFmmZaW9ENVpA1xaTU1Yh+0EwvlI2QclG3EYm2p7vCM="
+    - secure: "iqmGHXwYjMqjB86d2L+SL4keoHZyBAYzInTPDOjinbzYI5RzMRuTBjAMBYckC/icHpT1Hj/pH1O+YsrjKdVqgSFGXQsZVYQ9UQElnYwL33bbJbE5vQdA33sM+m811a0/zPXLOznM8SPNgn2SgNwNkhY2D0zFFHpDIK5rqAMhLnM="
+    - secure: "J0CLESW1LYiyK/ExekVVe1tNddVe2MRfwSVaOEattRMNuk5ReJyzhBXcXg4UqqNOhubs1oKBqq1yS9bXRG13QBozZ6Da5FZwESOZUTru76mekGZb0fHgSpQgXwhnsX0BCZJy1PIvgSidJRvPjTd2h72GCwsZ6WfGEYaZ0DZFjYc="
+    - secure: "Wxn5B6lsOjFqNd/S0gU9XGIY9yJSCBdOylJGalUc397OqzBFzVl67PLc0QL2MrKxGuA55MxatYQHd1hpM3xIVu8bmw1HEvbbvM+FgCX2f212VXwtRJf+frVMLB4ZMj1GYR2oTsOVGBo3GYg9kw7/TxMYXd7s5zIoYCNkzFfIoNI="
+    - secure: "PJfT/x2tZf8xjFeN1Q2CGuTnxEVfKY0otayzcSebWZWNaH9pUAIxk1M/MUczYyFaV61ua9D9cZfJxecQfY0WKOLHSwOWDwSaRCg4ZWlgqHNT0VtyWCCoMGwhsIfevGZZKVpQ7esU917MNjKprF7Ln6eKOFtudKEhLke5E8wiC4E="
+    - secure: "XzonNtFNNraI+AkApgJzxG7yPYq+sy/+z7VyJMhMLDMCuTXWa8xXSfM5SX7HFNizbe6ee+i1yw8ffHMLDjy64uOWyG45rkywnPzkvzeIGriBXyYwWDMS3RTohuzU0NOK3TUgKCU6mLctwBFw73L7k9XDxapYTSagTmpGzG3HNUM="
+    - secure: "i++mMpZQiMLhrl7MXuMq+pTBTaqVb1mRKsuQUnrtRzuhyfTUwICjvSLYcooSxR2ltmC2/IAVJHrIql0Bm9UrXDAoQ+rM/8lUxwJfSYP3uCt6HKX7dHOQ/2r0I2V+j2i61rxVi5dZB0NbMaPfdXdlkduZc2gSxlEjkIg7d0z30NM="
+    - secure: "cXrbjeutuW/KLGsAPCnM5/l8RHlRIrYbZS+1S2jGduVloErUy/uVZTdT4/6CC2Zw8NeiOtSESMR3ucp5kJkLo8qP/HEzBe7JbMm7/aREV9+KHxzDdOY3PEeL7qqQWTBWqx+SEmbahNwbgfKO6V3/q61J45ZMBwN/WYjJYLUWPT0="
+    - secure: "dO7eY+2CjlLZF/iDJEbL1P0I5eBg6XIUvOVHNWRcdMekmUevxcdlLKcxGtEgsNJsk/Id8aijKZiNiFLUWN64Wyv9Km+XU0Tyx6dbayfdhctz8lVzIAoKpbJza35xedZmUlrSVmOC7zVJn9oZTbGnbjAmOiNtpi7Ew3IWAY8vY2M="
+    - secure: "RAt9gV6fE/z7WS3BIKKlu+nmak/EeZjNQuVZA/gg/b32yhedixtAqYGjAvELcMSb3lWCiVe/Oqqi5Pl/84pZFts9FGkEDaHuao4kKga6seWNmUvPeXMyzbZyWWowDgbsslT31cZuWN0RG/BoVPl7d+HuXW9kzg560yVynij0+VE="
+    - secure: "MUs+TAkH/vFBPmC/QXxBsTj/VQvzlbcgHwBTxHa88KDHn0JrNhdnQfuJ2Lf2K+NN2ZW7sIjbh/1ONsEAxwEPFUphHWLnHhImzkvn0n8lbml8lcKz5V7R1neRfMYyXy/5VwMbw3dmIjaZDIZlz0ajz3hliLvTLZnj+aiwgZY0qfM="
+    - secure: "WmY4oml1OLIyTewoaR5h3zl0pKYNdj5v9XD5WxCztJIWofqOqLL+BURDrWpZn8PJxPEifUcM4Ngg3F9MqHLgj7OjUdwWpc/hSjsw1jJb38pHrPHSO5FlnHHiFtTK3SLULukQresj9STpNrIEk/2PpVAwLrQ7ptLvm3Q22EuTaUo="
+    - secure: "PeBdFyhkmNL490YX1E+La4qV1tQE5o3R78K6BzgxuwFz3gSNxPFhIllLhCaZ65zhtlew5RrwP0nHCbertrcc3hsAsaA2DbN8m/6slDJNgo4XLwSGRcc/WYOmgO8QA4awcLYJv9ngNEGIJGlIoa6JhU0YjS/5yMQycS3ShauQRqU="
+    - secure: "NuDmzlitC4FUN/tpU1yizjq3NFWf9GvvtsMY5kw9x2d9Ee3pHXLlMcnNzRmb7g5FcUcLDqAydKnsvGDT/ZfKNScG8i35MosMqOj0AxadT6SEKiTqG+5K/dtJIraJHShvnmZ1NyvHeOGSssoTELCB9bKhl3MkckKwBE3AZgigHUs="
